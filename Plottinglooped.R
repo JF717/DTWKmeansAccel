@@ -45,4 +45,50 @@ ggplot()+
   xlim(c(4149500,4151200))+
   ylim(c(-40,40))
 
+row.names(rundat) <- c(1:nrow(rundat))
+rundat$rid <- as.numeric(row.names(rundat))
 
+ggplot()+
+  theme_bw()+
+  geom_line(data = rundat, aes(rid, obj.X),color = "Blue")+
+  geom_line(data =  rundat, aes(rid, obj.Y),color = "Red")+
+  geom_line(data = rundat, aes(rid, obj.Z), color = "Green")+
+  ylim(c(-40,40))+
+  xlim(c(12000,12100))
+
+
+row.names(walkdat) <- c(1:nrow(walkdat))
+walkdat$rid <- as.numeric(row.names(walkdat))
+
+ggplot()+
+  theme_bw()+
+  geom_line(data = walkdat, aes(rid, obj.X),color = "Blue")+
+  geom_line(data =  walkdat, aes(rid, obj.Y),color = "Red")+
+  geom_line(data = walkdat, aes(rid, obj.Z), color = "Green")+
+  ylim(c(-40,40))
+  xlim(c(15000,15100))
+  
+  
+row.names(foragedat) <- c(1:nrow(foragedat))
+foragedat$rid <- as.numeric(row.names(foragedat))
+  
+  ggplot()+
+    theme_bw()+
+    geom_line(data = foragedat, aes(rid, obj.X),color = "Blue")+
+    geom_line(data =  foragedat, aes(rid, obj.Y),color = "Red")+
+    geom_line(data = foragedat, aes(rid, obj.Z), color = "Green")+
+    ylim(c(-40,40))+
+  xlim(c(15000,15100))
+  
+row.names(sitdat) <- c(1:nrow(sitdat))
+sitdat$rid <- as.numeric(row.names(sitdat))
+  
+ggplot()+
+    theme_bw()+
+    geom_line(data = sitdat, aes(rid, obj.X),color = "Blue")+
+    geom_line(data =  sitdat, aes(rid, obj.Y),color = "Red")+
+    geom_line(data = sitdat, aes(rid, obj.Z), color = "Green")+
+    ylim(c(-40,40))+
+    xlim(c(15000,15100))
+
+sitdat$rid <- NULL
